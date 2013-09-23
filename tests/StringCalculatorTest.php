@@ -1,5 +1,7 @@
 <?php
 
+require_once('../src/StringCalculator.php');
+
 class StringCalculatorTest extends \PHPUnit_Framework_TestCase
 {
     public function testAddWithEmptyString()
@@ -27,16 +29,5 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
         $result = $calculator->add('4,6');
 
         $this->assertSame(10, $result);
-    }
-}
-
-
-class StringCalculator
-{
-    public function add($numbers)
-    {
-        $parts = explode(',', $numbers);
-
-        return array_sum($parts);
     }
 }
