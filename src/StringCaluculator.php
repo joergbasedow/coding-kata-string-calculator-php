@@ -19,6 +19,15 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame(7, $result);
     }
+
+    public function testAddWithTwoNumber()
+    {
+        $calculator = new StringCalculator();
+
+        $result = $calculator->add('4,6');
+
+        $this->assertSame(10, $result);
+    }
 }
 
 
@@ -26,10 +35,8 @@ class StringCalculator
 {
     public function add($numbers)
     {
-        if ($numbers) {
-            return (int)$numbers;
-        }
+        $parts = explode(',', $numbers);
 
-        return 0;
+        return array_sum($parts);
     }
 }
