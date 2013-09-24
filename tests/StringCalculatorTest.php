@@ -16,6 +16,17 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($exprected, $result);
     }
 
+    /**
+     * @expectedException RuntimeException
+     * @expectedExceptionMessage negatives not allowed
+     */
+    public function testAddWithNegativeNumber()
+    {
+        $calculator = new StringCalculator();
+
+        $calculator->add('1,-2');
+    }
+
     public function dataProvider()
     {
         return array(
