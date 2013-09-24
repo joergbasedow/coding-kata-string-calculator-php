@@ -23,7 +23,8 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
             array('7', 7),
             array('4,6', 10),
             array('1,2,5,6,10,100', 124),
-            array("1\n2,3", 6)
+            array("1\n2,3", 6),
+            array("//;\n1;2", 3),
         );
     }
 }
