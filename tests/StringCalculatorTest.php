@@ -20,11 +20,22 @@ class StringCalculatorTest extends \PHPUnit_Framework_TestCase
      * @expectedException RuntimeException
      * @expectedExceptionMessage negatives not allowed
      */
-    public function testAddWithNegativeNumber()
+    public function testAddWithOneNegativeNumber()
     {
         $calculator = new StringCalculator();
 
         $calculator->add('1,-2');
+    }
+
+    /**
+     * @expectedException RuntimeException
+     * @expectedExceptionMessage negatives not allowed (-2,-5)
+     */
+    public function testAddWithMultipleNegativeNumbers()
+    {
+        $calculator = new StringCalculator();
+
+        $calculator->add('1,-2,-5,2');
     }
 
     public function dataProvider()

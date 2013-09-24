@@ -4,8 +4,10 @@ class StringCalculator
 {
     public function add($numbers)
     {
-        if (preg_match('/-\\d+/', $numbers)) {
-            throw new RuntimeException('negatives not allowed');
+        $matches = null;
+
+        if (preg_match_all('/-\\d+/', $numbers, $matches)) {
+            throw new RuntimeException('negatives not allowed (' . implode(',', $matches[0]) . ')');
         }
 
         $matches = null;
