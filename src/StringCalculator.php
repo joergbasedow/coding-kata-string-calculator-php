@@ -10,6 +10,7 @@ class StringCalculator
 
         if ($matches) {
             $delimiter = $matches[1];
+            $numbers = $matches[2];
         }
         else {
             $delimiter = ',';
