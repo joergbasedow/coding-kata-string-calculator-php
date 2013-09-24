@@ -6,3 +6,4 @@ coding-kata-string-calculator-php
      * Start with the simplest test case of an empty string and move to 1 and two numbers
      * Remember to solve things as simply as possible so that you force yourself to write tests you did not think about
      * Remember to refactor after each passing test
+    * Allow the Add method to handle an unknown amount of numbers
